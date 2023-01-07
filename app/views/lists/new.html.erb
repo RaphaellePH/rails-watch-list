@@ -1,0 +1,7 @@
+<h1>New Watchlist</h1>
+<div>
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "Add Watchlist", class: "btn btn-primary" %>
+  <% end %>
+</div>

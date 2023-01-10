@@ -1,6 +1,9 @@
-<h1>Add new movie</h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.input :comment %>
-  <%= f.button :submit %>
-<% end %>
+<h1>Add Movie to your <%= @list.name %> watchlist</h1>
+<div>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie %>
+    <%= f.input :comment %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
+<%= link_to "Back to #{@list.name} Watchlist", list_path(@list) %>

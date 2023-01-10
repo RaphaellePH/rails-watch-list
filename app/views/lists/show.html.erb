@@ -1,4 +1,6 @@
-<h1><%= @list.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill if @list.photo.attached? %>')">
+  <h1><%= @list.name %></h1>
+</div>
 <ul class="list-group">
   <% @list.bookmarks.each do |bookmark| %>
     <li class="list-group-item"><%= bookmark.movie.title %>

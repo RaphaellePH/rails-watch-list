@@ -1,7 +1,13 @@
 <h1>Your Watchlists</h1>
-<ul class = "list-group">
+<div class = "container">
   <% @lists.each do |list| %>
-    <li class="list-group-item"><%= link_to "#{list.name}", list_path(list.id) %></li>
+    <div class="card-list">
+      <%= cl_image_tag list.photo.key if list.photo.attached? %>
+      <div class="card-list-infos">
+        <h2><%= link_to "#{list.name}", list_path(list.id) %></h2>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
 <%= link_to "Create new Watchlist", new_list_path %>
